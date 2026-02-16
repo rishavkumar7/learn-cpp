@@ -1,0 +1,6 @@
+#include <iostream>
+
+int main() {
+    std::cout << "Hello World!" << std::endl;
+    return 0; // main tells the os that the program has completed successfully without errors. Similarly, if the return value is non-zero then it indicates that the program wasn't able to reach the return 0 statement and it threw some error midway.
+}

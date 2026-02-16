@@ -1,0 +1,16 @@
+#include <iostream>
+
+int add_numbers(int x, int y) { // executes a group of statements together by calling the function.
+    int result = x + y;
+    return result;
+}
+
+int main() {
+    int first_number {3}; // statement that initializes the variable first_number with the value 3.
+    int second_number {5};
+
+    int sum = add_numbers(first_number, second_number);
+    std::cout << "The sum of " << first_number << " and " << second_number << " is : " << sum << std::endl;
+    
+    return 0;
+}

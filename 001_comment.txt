@@ -1,0 +1,15 @@
+#include <iostream>
+
+int main() {
+
+    // Single-line comment
+
+    /*
+    Multi-line comments
+    or
+    Block comments
+    */
+
+    std::cout << "Use comments to document your code" << std::endl;
+    return 0;
+}

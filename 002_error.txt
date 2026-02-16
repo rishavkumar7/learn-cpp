@@ -1,0 +1,10 @@
+#include <iostream>
+
+int main() {
+    // Compile time error: missing semicolon (the file won't compile successfully)
+    // std::cout << "Hello World!" << std::endl
+
+    // Runtime error: division by zero (the program will compile successfully but will crash during execution of the binary file). It may throw a warning to prevent the disaster but will compile successfully.
+    int a = 20/0;
+    return 0;
+}
