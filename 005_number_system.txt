@@ -1,0 +1,15 @@
+#include <iostream>
+
+int main() {
+    int a = 28; // Decimal representation
+    int b = 034; // Octal representation (0 prefix indicates octal)
+    int c = 0x1C; // Hexadecimal representation (0x prefix indicates hexidecimal)
+    int d = 0b11100; // Binary representation (0b prefix indicates binary)
+
+    std::cout << "Decimal : " << a << std::endl;
+    std::cout << "Octal : " << b << std::endl;
+    std::cout << "Hexadecimal : " << c << std::endl;
+    std::cout << "Binary : " << d << std::endl;
+
+    return 0;
+}

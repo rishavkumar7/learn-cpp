@@ -1,0 +1,26 @@
+#include <iostream>
+#include <string>
+
+int main() {
+    std::string name, city;
+    int age;
+    bool isMale;
+
+    std::cout << "Enter your name : ";
+    std::getline(std::cin, name); // to read the full line of input including spaces
+
+    std::cout << "Enter your age : ";
+    std::cin >> age; // to read a single value
+
+    std::cout << "Enter your city. Also enter are you a male? (yes - 1, no - 0) : ";
+    std::cin >> city >> isMale; // Chaining : to read multiple values in a single line. The order is important here.
+
+    std::cout << "Name : " << name << std::endl; // to print a value with a newline at the end.
+    std::cout << "Age : " << age << std::endl;
+    std:: cout << "City : " << city << std::endl << "isMale : " << isMale << std::endl; // Chaining : to print multiple values together. The order is important here.
+
+    std::cerr << "Error Message : This is an error message" << std::endl;
+    std::clog << "Log Message : This is a log message" << std::endl;
+    
+    return 0;
+}
