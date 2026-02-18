@@ -1,0 +1,22 @@
+#include <iostream>
+
+int main() {
+    auto a{42}; // int
+    auto b{42U}; // unsigned int
+    auto c{42L}; // long int
+    auto d{42LL}; // long long int
+    auto e{42UL}; // unsigned long int
+    auto f{42ULL}; // unsigned long long int
+    auto g{3.14F}; // float
+    auto h{3.14}; // double
+    auto i{3.14L}; // long double
+    auto j{true}; // bool
+    auto k{'A'}; // char
+
+    std::cout << sizeof(a) << " " << sizeof(b) << " " << sizeof(c) << " " << sizeof(d) << " " << sizeof(e) << " " << sizeof(f) << std::endl;
+    std::cout << sizeof(g) << " " << sizeof(h) << " " << sizeof(i) << std::endl;
+    std::cout << sizeof(j) << std::endl;
+    std::cout << sizeof(k) << std::endl;
+
+    return 0;
+}
