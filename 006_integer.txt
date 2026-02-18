@@ -1,0 +1,63 @@
+#include <iostream>
+
+int main() {
+    // Braced initialization.
+
+    int x1; // some random garbage value is stored in x1.
+    int x2{}; // x2 is value-initialized to 0.
+    int x3{42}; // x3 is initialized to 42.
+    // int x4{42.9}; // error: narrowing conversion from "double" to "int" inside {}.
+
+    // Functional initialization.
+
+    // int y2(); // it cannot be empty.
+    int y3(42); // y3 is initialized to 42.
+    int y4(42.9); // y4 is initialized to 42 after truncating the decimal part.
+
+    // Assignment initialization.
+
+    int z3 = 42; // z3 is initialized to 42.
+    int z4 = 42.9; // z4 is initialized to 42 after truncating the decimal part.
+
+    std::cout << x1 << " " << x2 << " " << x3 << std::endl;
+    std::cout << y3 << " " << y4 << std::endl;
+    std::cout << z3 << " " << z4 << std::endl;
+
+    // Applying modifiers.
+
+    short a1 = 42; // 2 Bytes.
+    short int a2 = 42; // -2^15 to 2^15 - 1
+    signed short a3 = 42; // -2^15 to 2^15 - 1
+    signed short int a4 = 42;
+    unsigned short a5 = 42; // 0 to 2^16 - 1
+    unsigned short int a6 = 42;
+    
+    int b1 = 42; // 4 Bytes. -2^31 to 2^31 - 1
+    signed b2 = 42; // -2^31 to 2^31 - 1
+    signed int b3 = 42;
+    unsigned b4 = 42; // 0 to 2^32 - 1
+    unsigned int b5 = 42;
+
+    long c1 = 42; // 4 or 8 Bytes depending on the platform. LLP64(Windows): 4 Bytes, LP64(Linux/MacOS): 8 Bytes.
+    long int c2 = 42;
+    signed long c3 = 42;
+    signed long int c4 = 42;
+    unsigned long c5 = 42;
+    unsigned long int c6 = 42;
+
+    long long d1 = 42; // 8 Bytes.
+    long long int d2 = 42; // -2^63 to 2^63 - 1
+    signed long long d3 = 42; // -2^63 to 2^63 - 1
+    signed long long int d4 = 42;
+    unsigned long long d5 = 42; // 0 to 2^64 - 1
+    unsigned long long int d6 = 42;
+
+    std::cout << sizeof(a1) << " " << sizeof(a2) << " " << sizeof(a3) << " " << sizeof(a4) << " " << sizeof(a5) << " " << sizeof(a6) << std::endl;
+    std::cout << sizeof(b1) << " " << sizeof(b2) << " " << sizeof(b3) << " " << sizeof(b4) << " " << sizeof(b5) << std::endl;
+    std::cout << sizeof(c1) << " " << sizeof(c2) << " " << sizeof(c3) << " " << sizeof(c4) << " " << sizeof(c5)	<< " " << sizeof(c6)<< std::endl;
+    std::cout << sizeof(d1) << " " << sizeof(d2) << " " << sizeof(d3) << " " << sizeof(d4) << " " << sizeof(d5) << " " << sizeof(d6) << std::endl;
+    
+    return 0;
+}
+
+// signed 
