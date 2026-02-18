@@ -1,0 +1,14 @@
+#include <iostream>
+
+int main() {
+    char a = 'A';
+    char b = 66; // ASCII value of 'B' is 66. Characters can be initialized using their ASCII values.
+    char c{'C'};
+    char d{68}; // ASCII value of 'D' is 68.
+ 
+    std::cout << a << " " << b << " " << c << " " << d << std::endl; // prints the characters.
+    std::cout << static_cast<int>(a) << " " << static_cast<int>(b) << " " << static_cast<int>(c) << " " << static_cast<int>(d) << std::endl; // converts to respective ASCII values.
+    std::cout << sizeof(char) << std::endl; // 1 Byte.
+
+    return 0;
+}

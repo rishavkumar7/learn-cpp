@@ -1,0 +1,14 @@
+#include <iostream>
+
+int main() {
+    bool a = true;
+    bool b = false;
+    bool c{true};
+
+    std::cout << a << " " << b << " " << c << std::endl; // by default, it prints 1 for true and 0 for false.
+    std::cout << std::boolalpha << a << " " << b << " " << c << std::endl; // converts to true and false format.
+    std::cout << std::noboolalpha << a << " " << b << " " << c << std::endl; // converts back to 1 and 0 format.
+    std::cout << sizeof(bool) << " " << sizeof(true) << " " << sizeof(a) << std::endl; // 1 Byte.
+
+    return 0;
+}
