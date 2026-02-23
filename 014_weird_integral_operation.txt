@@ -1,0 +1,16 @@
+#include <iostream>
+
+int main() {
+    short a{10}, b{20};
+    char c{30}, d{40};
+
+    // As per C++ standard, integral types smaller than int are promoted to int before arithmetic operations.
+    auto e = a + b; // a and b are promoted to int before addition, so e is of type int.
+    auto f = c + d; // c and d are promoted to int before addition, so f is of type int.
+
+    std::cout << sizeof(a) << " " << sizeof(b) << std::endl; // size of short is 2 bytes each.
+    std::cout << sizeof(c) << " " << sizeof(d) << std::endl; // size of char is 1 byte each.
+    std::cout << sizeof(e) << " " << sizeof(f) << std::endl; // size of int is 4 bytes each.
+
+    return 0;
+}

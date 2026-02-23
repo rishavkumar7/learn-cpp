@@ -1,0 +1,19 @@
+#include <iostream>
+#include <cmath>
+
+int main() {
+    std::cout << std::floor(3.7) << std::endl; // rounds down.
+    std::cout << std::ceil(3.2) << std::endl; // rounds up.
+    std::cout << std::round(3.2) << " " << std::round(3.5) << " " << std::round(3.7) << std::endl; // rounds accordingly.
+    std::cout << std::abs(-5.6) << std::endl; // absolute value.
+    std::cout << std::sqrt(16) << std::endl; // square root.
+    std::cout << std::exp(2) << std::endl; // e^x.
+    std::cout << std::pow(2, 3) << std::endl; // x^y.
+    std::cout << std::log(10) << std::endl; // log_e(x).
+    std::cout << std::log10(100) << " " << std::log2(8) << std::endl; // log_x(y).
+    std::cout << std::sin(2) << std::endl; // sin(x).
+    std::cout << std::cos(2) << std::endl; // cos(x).
+    std::cout << std::tan(2) << std::endl; // tan(x).
+
+    return 0;
+}
