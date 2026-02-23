@@ -53,7 +53,7 @@ int main() {
     std::cout << std::setw(20) << "Ravi Kumar" << std::setw(10) << 29 << std::endl;
 
     // _____________setprecision__________________
-    std::cout << std::setprecision(8) << 123.4567890123456 << std::endl; //  it dictates exactly 'n' digits after the decimal point, rounding the last digit.
+    std::cout << std::setprecision(8) << 123.4567890123456 << std::endl; //  it dictates exactly 'n' digits after the decimal point, rounding the last digit. But if we exceed the precision offered by the type then the remaining precision is just garbage. For example, if precision is set to 20 but if double supports only 15 precision then the remaining 5 will be just garbage.
 
     // _____________setfill________________________
     std::cout << std::setw(20);
