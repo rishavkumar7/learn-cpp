@@ -1,0 +1,145 @@
+#include <iostream>
+#include <iomanip>
+
+// ____________________________________________________________________________________________________________________________________________________
+//        Manipulator      |        Header         |         Purpose                                                                                   
+// ========================|=======================|===================================================================================================
+//        endl             |        <ostream>      |   Insert newline character.
+//        flush            |        <ostream>      |   Flush the output stream.
+// ========================|=======================|===================================================================================================
+//        setw             |        <iomanip>      |   Changes the width of the next input/output field.
+//        setprecision     |        <iomanip>      |   Number of digits used to represent a floating point value.
+//        setfill          |        <iomanip>      |   Changs the fill character.
+// ========================|=======================|===================================================================================================
+//        left             |        <ios>          |   Left-justify the output in the field.
+//        right            |        <ios>          |   Right-justify the output in the field.
+//        internal         |        <ios>          |   Internal-justify the output in the field (padding is placed between the sign and the number).
+// ========================|=======================|===================================================================================================
+//        boolalpha        |        <ios>          |   Output format for boolean is true/false.
+//        noboolalpha      |        <ios>          |   Output format for boolean is 1/0.
+// ========================|=======================|===================================================================================================
+//        showpos          |        <ios>          |   Show '+' sign for positive numbers.
+//        noshowpos        |        <ios>          |   Don't show '+' sign for positive numbers.
+// ========================|=======================|===================================================================================================
+//        dec              |        <ios>          |   Output integer values in decimal format (base 10).
+//        hex              |        <ios>          |   Output integer values in hexadecimal format (base 16).
+//        oct              |        <ios>          |   Output integer values in octal format (base 8).
+// ========================|=======================|===================================================================================================
+//        showbase         |        <ios>          |   Show the base prefix for integer values (0 for octal, 0x for hexadecimal).
+//        noshowbase       |        <ios>          |   Don't show the base prefix for integer values.
+// ========================|=======================|===================================================================================================
+//        uppercase        |        <ios>          |   Use uppercase letters for hexadecimal digits and the exponent in scientific notation.
+//        nouppercase      |        <ios>          |   Use lowercase letters for hexadecimal digits and the exponent in scientific notation.
+// ========================|=======================|===================================================================================================
+//        fixed            |        <ios>          |   Floating point output format is fixed-point notation.
+//        scientific       |        <ios>          |   Floating point output format is scientific notation (exponential notation).
+// ========================|=======================|===================================================================================================
+//        showpoint        |        <ios>          |   Show the trailing zeroes for floating point numbers, even if they are not necessary.
+//        noshowpoint      |        <ios>          |   Don't show the trailing zeroes for floating point numbers.
+// ____________________________________________________________________________________________________________________________________________________
+
+int main() {
+    // _____________endl__________________________
+    std::cout << "Hello, World!" << std::endl; // Inserts a newline character and flushes the output stream.
+    std::cout << "Hello, World!!\n"; // Inserts a newline character but doesn't flush the output stream.
+
+    // _____________flush_________________________
+    std::cout << "This will be flushed immediately.\n" << std::flush; // Flushes the output buffer to its final destination.  Note that flush doesn't add a newline character.
+    // At this line we're sure that the message has been sent to the output device (terminal, file, etc.). This may be important in some applications where you want to ensure that the output is visible before proceeding with further operations.
+
+    // _____________setw__________________________
+    std::cout << std::setw(20) << "Name" << std::setw(10) << "Number" << std::endl; // sets the width to the desired value for the next input/output.
+    std::cout << std::setw(20) << "Rishav Kumar" << std::setw(10) << -27 << std::endl;
+    std::cout << std::setw(20) << "Ravi Kumar" << std::setw(10) << 29 << std::endl;
+
+    // _____________setprecision__________________
+    std::cout << std::setprecision(8) << 123.4567890123456 << std::endl; //  it dictates exactly 'n' digits after the decimal point, rounding the last digit.
+
+    // _____________setfill________________________
+    std::cout << std::setw(20);
+    std::cout << std::setfill('*'); // sets the fill character to '*'.
+    std::cout << "Hello" << std::endl; // fills the remaining space with '*' characters.
+    std::cout << std::setfill(' '); // sets the fill character back to the default (space character).
+
+    // _____________left__________________________
+    std::cout << std::left; // sets the alignment to the left for the next input/output.
+    std::cout << std::setw(20) << "Name" << std::setw(10) << "Age" << std::endl;
+    std::cout << std::setw(20) << "Rishav Kumar" << std::setw(10) << -27 << std::endl;
+    std::cout << std::setw(20) << "Ravi Kumar" << std::setw(10) << 29 << std::endl;
+
+    // _____________right_________________________
+    std::cout << std::right; // sets the alignment to the right for the next input/output.
+    std::cout << std::setw(20) << "Name" << std::setw(10) << "Age" << std::endl;
+    std::cout << std::setw(20) << "Rishav Kumar" << std::setw(10) << -27 << std::endl;
+    std::cout << std::setw(20) << "Ravi Kumar" << std::setw(10) << 29 << std::endl;
+
+    // _____________internal______________________
+    std::cout << std::internal; // the padding is placed between the sign and the number for the next input/output.
+    std::cout << std::setw(20) << "Name" << std::setw(10) << "Age" << std::endl;
+    std::cout << std::setw(20) << "Rishav Kumar" << std::setw(10) << -27 << std::endl;
+    std::cout << std::setw(20) << "Ravi Kumar" << std::setw(10) << 29 << std::endl;
+
+    // _____________boolalpha/noboolalpha_________
+    std::cout << true << std::endl; // by default the output format is 1/0 for boolean values.
+    std::cout << std::boolalpha << true << std::endl; // changes the output format for the boolean values to true/false.
+    std::cout << std::noboolalpha << true << std::endl; // changes the output format for the boolean values back to 1/0.
+
+    // _____________showpos/noshowpos______________
+    std::cout << 27 << std::endl; // by default the output format doesn't show the '+' sign for positive numbers.
+    std::cout << std::showpos << 27 << std::endl; // changes the output format to show the '+' sign for positive numbers.
+    std::cout << std::noshowpos << 27 << std::endl; // changes the output format back to not show the '+' sign for positive numbers.
+
+    // _____________dec/hex/oct____________________
+    std::cout << std::dec << 12345 << std::endl; // prints the integer value in decimal format (base 10).
+    std::cout << std::hex << 12345 << std::endl; // prints the integer value in hexadecimal format (base 16).
+    std::cout << std::oct << 12345 << std::endl; // prints the integer value in octal format (base 8).
+
+    // _____________showbase/noshowbase____________
+    std::cout << std::showbase; // adds the base prefix for integers (0 for octal, 0x for hexadecimal).
+    std::cout << std::dec << 12345 << std::endl;
+    std::cout << std::hex << 12345 << std::endl;
+    std::cout << std::oct << 12345 << std::endl;
+    std::cout << std::noshowbase; // removes the base prefix for integers.
+    std::cout << std::dec << 12345 << std::endl;
+    std::cout << std::hex << 12345 << std::endl;
+    std::cout << std::oct << 12345 << std::endl;
+
+    // _____________uppercase/nouppercase___________
+    std::cout << std::showbase;
+    std::cout << std::uppercase; // prints the hexadecimal digits in uppercase and the exponent in scientific notation in uppercase.
+    std::cout << std::dec << 12345 << std::endl;
+    std::cout << std::hex << 12345 << std::endl;
+    std::cout << std::oct << 12345 << std::endl;
+    std::cout << std::nouppercase; // brings back to lowercase.
+    std::cout << std::dec << 12345 << std::endl;
+    std::cout << std::hex << 12345 << std::endl;
+    std::cout << std::oct << 12345 << std::endl;
+    std::cout << std::noshowbase;
+
+    // _____________fixed/scientific________________
+    std::cout << std::fixed; // sets the floating point output format to fixed-point notation.
+    std::cout << 123.456789 << std::endl;
+    std::cout << 1.34e-10 << std::endl;
+    std::cout << 123.0000 << std::endl;
+    std::cout << std::scientific; // sets the floating point output format to scientific notation (exponential notation).
+    std::cout << 123.456789 << std::endl;
+    std::cout << 1.34e-10 << std::endl;
+    std::cout << 123.0000 << std::endl;
+    std::cout << std::defaultfloat; // resets the floating point output format to the default format (which is fixed-point notation).
+    // std::cout.unsetf(std::ios::scientific | std::ios::fixed); // another way to reset the floating point output format to the default format (which is fixed-point notation).
+    std::cout << 123.456789 << std::endl;
+    std::cout << 1.34e-10 << std::endl;
+    std::cout << 123.0000 << std::endl;
+
+    // _____________showpoint/noshowpoint____________
+    std::cout << std::showpoint; // shows the trailing zeroes for floating point numbers, even if they are not necessary.
+    std::cout << 123.456789 << std::endl;
+    std::cout << 1.34e-10 << std::endl;
+    std::cout << 123.0000 << std::endl;
+    std::cout << std::noshowpoint; // doesn't show the trailing zeroes for floating point numbers.
+    std::cout << 123.456789 << std::endl;
+    std::cout << 1.34e-10 << std::endl;
+    std::cout << 123.0000 << std::endl;
+
+    return 0;
+}
