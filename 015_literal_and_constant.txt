@@ -1,0 +1,35 @@
+#include <iostream>
+#include <string>
+
+int main() {
+    // _____________________Literals_____________________________
+
+    int var1 = 10; // Integer literal
+    unsigned int var2 = 20u; // Unsigned integer literal
+    long var3 = 30L; // Long integer literal
+    unsigned long var4 = 40UL; // Unsigned long integer literal
+    long long var5 = 50LL; // Long long integer literal
+    unsigned long long var6 = 60ULL; // Unsigned long long integer literal
+    float var7 = 3.14F; // Float literal
+    double var8 = 3.14; // Double literal
+    long double var9 = 3.14L; // Long double literal
+    bool var10 = true; // Boolean literal
+    char var11 = 'A'; // Character literal
+    std::string var12 = "Hello World"; // String literal
+    int var13 = 0B1010; // Binary literal
+    unsigned int var14 = 0B11110000U; // Unsigned binary literal
+    int var15 = 045; // Octal literal
+    unsigned int var16 = 045U; // Unsigned octal literal
+    int var17 = 0X1A; // Hexadecimal literal
+    unsigned int var18 = 0X1AU; // Unsigned hexadecimal literal
+
+    // _____________________Constants_____________________________
+
+    const int constVar1 = 100; // Constant integer. Similarly we can declare constants of other types as well by adding the const keyword before the type.
+    
+    // _____________________Constant expressions__________________
+
+    // _____________________Constant initialization_______________
+    
+    return 0;
+}
