@@ -1,0 +1,58 @@
+#include <iostream>
+
+int main() {
+    // _____________Implicit Type Conversion__________________________________________________________________________________________
+
+    // In all the below operations between different types, the smaller type value will be converted to larger type value implicitly and then the operation will be performed and the result will be of larger type.
+    // Order from smaller to largr type : int -> unsigned int -> long int -> unsigned long int -> long long int -> unsigned long long int -> float -> double -> long double
+    int a = 10;
+    double b = 41.61;
+    auto c = a + b;
+    auto d = a - b;
+    auto e = a * b;
+    auto f = a / b;
+    auto g = b / a;
+
+    std::cout << c << " " << d << " " << e << " " << f << " " << g << std::endl;
+    std::cout << sizeof(c) << " " << sizeof(d) << " " << sizeof(e) << " " << sizeof(f) << " " << sizeof(g) << std::endl;
+
+    // In all the below assignment operations, the type of the right hand side value will be implicitly converted to the type of the left hand side value and then the assignment will be performed.
+    int x = 10;
+    double y = 41.61;
+    x = y; // x = 41 as the 0.61 part will be trimmed off and there will be loss of data.
+
+    std::cout << x << " " << y << std::endl;
+    std::cout << sizeof(x) << " " << sizeof(y) << std::endl;
+
+    // _____________Explicit Type Conversion____________________________________________________________________________________________
+    
+    // New style C++ type casting
+    double k = 10.51;
+    double l = 41.61;
+    auto m = static_cast<int>(k) + static_cast<int>(l);
+    auto n = static_cast<unsigned int>(k+l);
+
+    std::cout << k << " " << l << " " << m << " " << n << std::endl;
+    std::cout << sizeof(k) << " " << sizeof(l) << " " << sizeof(m) << " " << sizeof(n) << std::endl;
+
+    // Old style C type casting
+    double p = 10.51;
+    double q = 41.61;
+    auto r = (int)p + (int)q;
+    auto s = (unsigned int)(p+q);
+
+    std::cout << p << " " << q << " " << r << " " << s << std::endl;
+    std::cout << sizeof(p) << " " << sizeof(q) << " " << sizeof(r) << " " << sizeof(s) << std::endl;
+
+    // ______________Overflow and Underflow____________________________________________________________________________________________
+
+    unsigned char val1 = 0; // unsigned char ranges from 0 to 255.
+    unsigned char val2 = 255;
+
+    val1--; // underflow to 255 and the cycle continues
+    val2++; // overflow to 0 and the cycle continues
+
+    std::cout << static_cast<int>(val1) << " " << static_cast<int>(val2) << std::endl;
+
+    return 0;
+}
