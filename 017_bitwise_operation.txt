@@ -1,0 +1,33 @@
+#include <iostream>
+#include <bitset>
+
+int main() {
+    unsigned short int a{0b1111};
+
+    // ______________Printing in binary representation_____________________________________________
+    std::cout << std::bitset<16>(a) << std::endl; // Output: 0000000000001111
+
+    // ______________Bitwise Shifting Operators____________________________________________________
+    std::cout << std::bitset<16>(a << 2) << std::endl; // Output: 0000000000111100    LEFT SHIFT
+    std::cout << std::bitset<16>(a >> 2) << std::endl; // Output: 0000000000000011    RIGHT SHIFT
+
+    // ______________Bitwise Logical Operators_____________________________________________________
+    std::cout << std::bitset<16>(a & 0b1010) << std::endl; // Output: 0000000000001010    AND
+    std::cout << std::bitset<16>(a | 0b1110) << std::endl; // Output: 0000000000001111    OR
+    std::cout << std::bitset<16>(a ^ 0b1010) << std::endl; // Output: 0000000000000101    XOR
+    std::cout << std::bitset<16>(~a) << std::endl;         // Output: 1111111111110000    NOT
+
+    // ______________Compound Assignment Operators_________________________________________________
+    a <<= 2; // LEFT SHIFT
+    std::cout << std::bitset<16>(a) << std::endl; // Output: 0000000000111100
+    a >>= 2; // RIGHT SHIFT
+    std::cout << std::bitset<16>(a) << std::endl; // Output: 0000000000001111
+    a &= 0b1010; // AND
+    std::cout << std::bitset<16>(a) << std::endl; // Output: 0000000000001010
+    a |= 0b1110; // OR
+    std::cout << std::bitset<16>(a) << std::endl; // Output: 0000000000001110
+    a ^= 0b1010; // XOR
+    std::cout << std::bitset<16>(a) << std::endl; // Output: 0000000000000100
+
+    return 0;
+}
