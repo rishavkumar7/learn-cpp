@@ -1,0 +1,32 @@
+#include <iostream>
+
+// Variable Lifetime - Refers to the storage duration of variable type.
+// Variable Scope - Refers to the access region in our program.
+
+int var5{5}; // Global Variable.
+
+int func1() {
+    int var6{6}; // Local Variable. (this is accessible only inside the func1)
+    static int var7{7}; // Global Variable.
+}
+
+int func2() {
+    int var8{8}; // Local Variable. (this is accessible only inside the func2)
+    static int var9{9}; // Global Variable.
+}
+
+int main() {
+    int var1{1}; // Local Variable. (this is accessible only inside the main function)
+    static int var2{2}; // Global Variable.
+
+    {
+        int var3{3}; // Local Variable. (this is accessible only inside this block and not in the entire main function)
+        static int var4{4}; // Global Variable.
+    }
+
+    return 0;
+}
+
+// Global Variable : Lifetime - exists until the end of the program, Scope - entire region of the program.
+// Local Variable (Block/automatic) : Lifetime - exists until the block ends, Scope - entire region inside the block. 
+// Dynamic Variable : Lifetime - this ends whenever the user wants it to end
