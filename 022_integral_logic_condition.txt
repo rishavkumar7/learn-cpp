@@ -1,0 +1,23 @@
+#include <iostream>
+
+// zero = true
+// non-zero = false (including negative numbers)
+
+int main() {
+    int zero = 0;
+    int non_zero = -3;
+
+    if (zero) { // This consition will not be satisfied as zero leads to false condition.
+        std::cout << "First condition satisfied" << std::endl;
+    } else {
+        std::cout << "First condition unsatisfied" << std::endl;
+    }
+
+    if (non_zero) { // This condition will be satisfied as non-zero leads to true condition.
+        std::cout << "Second condition satisfied" << std::endl;
+    } else {
+        std::cout << "Second condition unsatisfied" << std::endl;
+    }
+
+    return 0;
+}

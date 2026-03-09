@@ -1,0 +1,37 @@
+#include <iostream>
+
+bool check1() {
+    std::cout << "Checking condition 1" << std::endl;
+    return true;
+}
+
+bool check2() {
+    std::cout << "Checking condition 2" << std::endl;
+    return false;
+}
+
+bool check3() {
+    std::cout << "Checking condition 3" << std::endl;
+    return true;
+}
+
+bool check4() {
+    std::cout << "Checking condition 4" << std::endl;
+    return false;
+}
+
+int main() {
+    if (check1() && check2() && check3() && check4()) { // Both check3() and check4() will not be reached as "false" condition was satisfied till check2() only.
+        std::cout << "Success" << std::endl;
+    } else {
+        std::cout << "Failure" << std::endl; // Failure will be displayed as condition wasn't satisfied.
+    }
+
+    if (check2() || check4() || check1() || check3()) { // check3() will not be reached as the "true" condition was satisfied till check1() only.
+        std::cout << "Success" << std::endl; // Success will be displayed as condition was satisfied.
+    } else {
+        std::cout << "Success" << std::endl;
+    }
+
+    return 0;
+}

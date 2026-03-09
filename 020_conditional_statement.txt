@@ -1,0 +1,53 @@
+#include <iostream>
+
+int main() {
+    int num1{20};
+    int num2{30};
+
+    // ___________if else-if else_______________________________
+    if (num1 == 30 && num2 == 20) {
+        std::cout << "numbers matched in if" << std::endl;
+    } else if (num1 == 20 && num2 == 30) {
+        std::cout << "numbers matched in if-else" << std::endl;
+    } else {
+        std::cout << "numbers didn't match" << std::endl;
+    }
+
+    // ___________nested if______________________________________
+    if (num1 == 20) {
+        if (num2 == 30) {
+            std::cout << "condition reached" << std::endl;
+        } else {
+            std::cout << "only first number matched" << std::endl;
+        }
+    } else {
+        std::cout << "first number didn't match" << std::endl;
+    }
+
+    // ___________switch-case____________________________________
+    switch (num1) { // only integral values (short, int, long, etc.) or enums can occupy this position.
+        case 10 : {
+            std::cout << "number is 10" << std::endl;
+        }
+        break; // if any case matches then all cases will be met after that until the break statement is reached.
+        case 20 : {
+            std::cout << "number is 20" << std::endl;
+        }
+        break;
+        case 30 : {
+            std::cout << "number is 30" << std::endl;
+        }
+        break;
+        case 40 :
+        case 50 :
+        case 60 : { // multiple cases meet the same statement.
+            std::cout << "number is among 40 or 50 or 60" << std::endl;
+        }
+        break;
+        default : { // if none of the above cases match then the default case will be reached.
+            std::cout << "number didn't match any case" << std::endl;
+        }
+    }
+
+    return 0;
+}

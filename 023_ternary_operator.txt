@@ -1,0 +1,25 @@
+#include <iostream>
+#include <string>
+
+int main() {
+    int a{20};
+    int b{30};
+    double c{25.50};
+    std::string d{"Rishav Kumar"};
+
+    int val1 = a > b ? a : b;
+    std::cout << val1 << std::endl;
+
+    int val2 = a > c ? a : c; // val2 is of type int therefore there will be loss of data from 'c'.
+    std::cout << val2 << std::endl;
+
+    auto val3 = a > c ? a : c;
+    std::cout << val3 << " " << sizeof(val3) << std::endl; // val3 is of type double
+
+    auto val4 = a < c ? a : c;
+    std::cout << val4 << " " << sizeof(val4) << std::endl; // val4 is of type double
+
+    // int val5 = a > b ? a : d; // this will lead to compilation error as 'a' is of type "int" and 'd' is of type string.
+
+    return 0;
+}
